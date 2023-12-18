@@ -44,17 +44,17 @@ fn get_line_offset(line_width: u16, text_area_width: u16, alignment: Alignment) 
 #[derive(Debug, Default, Clone, Eq, PartialEq, Hash)]
 pub struct Paragraph<'a> {
     /// A block to wrap the widget in
-    block: Option<Block<'a>>,
+    pub block: Option<Block<'a>>,
     /// Widget style
-    style: Style,
+    pub style: Style,
     /// How to wrap the text
-    wrap: Option<Wrap>,
+    pub wrap: Option<Wrap>,
     /// The text to display
-    text: Text<'a>,
+    pub text: Text<'a>,
     /// Scroll
-    scroll: (u16, u16),
+    pub scroll: (u16, u16),
     /// Alignment of the text
-    alignment: Alignment,
+    pub alignment: Alignment,
 }
 
 /// Describes how to wrap text across lines.
