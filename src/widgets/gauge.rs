@@ -105,11 +105,7 @@ impl<'a> Gauge<'a> {
     /// See [`Gauge::percent`] to set from a percentage.
     #[must_use = "method moves the value of self and returns the modified value"]
     pub fn ratio(mut self, ratio: f64) -> Gauge<'a> {
-        assert!(
-            (0.0..=1.0).contains(&ratio),
-            "Ratio should be between 0 and 1 inclusively."
-        );
-        self.ratio = ratio;
+        self.ratio = ratio.clamp(0.0, 1.0);
         self
     }
 
