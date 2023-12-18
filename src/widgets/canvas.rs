@@ -817,8 +817,8 @@ where
         let width = (self.x_bounds[1] - self.x_bounds[0]).abs();
         let height = (self.y_bounds[1] - self.y_bounds[0]).abs();
         let resolution = {
-            let width = f64::from(canvas_area.width - 1);
-            let height = f64::from(canvas_area.height - 1);
+            let width = f64::from(canvas_area.width) - 1.0;
+            let height = f64::from(canvas_area.height) - 1.0;
             (width, height)
         };
         for label in ctx
