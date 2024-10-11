@@ -303,11 +303,6 @@ impl<'a> Paragraph<'a> {
     /// let paragraph = Paragraph::new("Hello World\nhi\nHello World!!!");
     /// assert_eq!(paragraph.line_width(), 14);
     /// ```
-    #[stability::unstable(
-        feature = "rendered-line-info",
-        reason = "The design for text wrapping is not stable and might affect this API.",
-        issue = "https://github.com/ratatui-org/ratatui/issues/293"
-    )]
     pub fn line_width(&self) -> usize {
         self.text.iter().map(Line::width).max().unwrap_or_default()
     }
