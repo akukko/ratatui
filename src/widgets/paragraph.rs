@@ -266,11 +266,6 @@ impl<'a> Paragraph<'a> {
     /// assert_eq!(paragraph.line_count(20), 1);
     /// assert_eq!(paragraph.line_count(10), 2);
     /// ```
-    #[stability::unstable(
-        feature = "rendered-line-info",
-        reason = "The design for text wrapping is not stable and might affect this API.",
-        issue = "https://github.com/ratatui-org/ratatui/issues/293"
-    )]
     pub fn line_count(&self, width: u16) -> usize {
         if width < 1 {
             return 0;
